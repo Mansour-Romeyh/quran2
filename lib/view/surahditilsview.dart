@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quran2/controller/surahditilscontroller.dart';
+import 'package:quran2/core/constant/appfonts.dart';
+import 'package:quran2/view/widgets/surahlist.dart';
+
+class SurahDitilsView extends StatelessWidget {
+  const SurahDitilsView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+   SurahDitilsController controller = Get.put(SurahDitilsController());
+    return Scaffold(
+
+      appBar: AppBar(title: Text(' سورة ${controller.data[0].nameAr}',style: Appfonts.fonttagwal.copyWith(fontSize: 30,fontWeight: FontWeight.bold))),
+      body: ListView.builder(
+        itemCount: controller.data[0].nameArDays.length,
+        itemBuilder: (context, index) => 
+      Surahlist(index: index, name_ar: controller.data[0].nameArDays[index], onTap: (){
+        controller.gotovidoeplayer(index);
+      })
+      ,),
+    )
+    
+    ;
+  }
+}
