@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:quran2/core/constant/approutes.dart';
 class Splashcontroller extends GetxController {
   gotOnpording() {
-    Get.offNamed(Approutes.homeview);
+    Get.offNamed(Approutes.onpording);
   }
 
   @override

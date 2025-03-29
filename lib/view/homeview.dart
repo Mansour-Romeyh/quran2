@@ -20,10 +20,11 @@ class Homeview extends StatelessWidget {
       ],
       centerTitle: false,
       title: Text('السور',style: Appfonts.fonttagwal.copyWith(fontSize: 50),),
-    ) ,body: ListView.builder(
+    ) ,body: GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.6/0.4),
       itemCount: controller.data.length,
       itemBuilder: (context, index) => 
-    Surahlist(index: index, name_ar: " سورة  ${controller.data[index].nameAr}", onTap: (){
+    Surahlist(index: index, name_ar: "   ${controller.data[index].nameAr}", onTap: (){
       controller.gotosurahditils(index);
     })
     ,));
